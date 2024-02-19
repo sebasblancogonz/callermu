@@ -1,9 +1,9 @@
 ---
 tag:
-  - Docs
-title: Getting started 🚀
-description: How to install and Nebulix.
-intro: Clone, Configure, Deploy
+  - WOD
+title: "Desafiando los Límites: Un WOD de Ejemplo para Principiantes en CrossFit"
+description: "Desafiando los Límites: Un WOD de Ejemplo para Principiantes en CrossFit"
+intro: "Desafiando los Límites: Un WOD de Ejemplo para Principiantes en CrossFit"
 style:
   template: split
   card_template: grid
@@ -11,153 +11,35 @@ style:
   container: md
   hero_image_opacity: ""
 pubDate: 2023-09-03T12:18:03.122+02:00
-thumbnail: /src/assets/nebulala_rocket.jpeg
+thumbnail: /src/assets/que-es-un-wod.jpg
 ---
+# **Desafiando los Límites: Un WOD de Ejemplo para Principiantes en CrossFit**
 
-## Clone this repo or deploy to netlify
+El Workout of the Day (WOD) es el corazón y el alma de cualquier sesión de CrossFit, diseñado para desafiar a los participantes tanto física como mentalmente. Para los principiantes que se adentran en el mundo del CrossFit, es fundamental comenzar con un WOD adecuado que proporcione un desafío efectivo sin ser abrumador. A continuación, presentamos un WOD de ejemplo diseñado específicamente para principiantes:
 
-Easily deploy this theme to Netlify with a single click.
+## **Nombre del WOD: Iniciación al CrossFit**
 
-| [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/unfolding-io/nebulix#BLOG_SLUG=blog&PORTFOLIO_SLUG=work&SHOP_SLUG=shop&MENU_SLUG=menu&WEBSITE_LANGUAGE=en&CURRENCY=USD&UNITS=metric&NODE_VERSION=18) | [![GitHub Repo stars](https://img.shields.io/github/stars/unfolding-io/nebulix?logo=github)](https://github.com/unfolding-io/nebulix) |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+**Objetivo del WOD:** Introducir a los principiantes en los principios fundamentales del CrossFit, incluyendo movimientos básicos y una dosis de cardio.
 
-## 1. Setting up the .env file
+**Duración del WOD:** Aproximadamente 20 minutos.
 
-rename the `env.txt` to `.env` and fill in your details
+**Descripción del WOD:**
 
-```ENV
-BLOG_SLUG=blog
-PORTFOLIO_SLUG=work
-SHOP_SLUG=shop
-MENU_SLUG=menu
-WEBSITE_LANGUAGE=en
-CURRENCY=USD
-UNITS=metric
-SNIPCART_KEY=<your-snipcart-public-key>
-NEWSLETTER_PROVIDER=mailchimp
-MAILCHIMP_API_KEY=XXXXXXXXXXXXXXXX-us21
-MAILCHIMP_SERVER_PREFIX=us21
-MAILCHIMP_LIST_ID=XXXXXXXXX
-NODE_VERSION=18
+1. **Calentamiento (5 minutos):** Comienza con 5 minutos de calentamiento dinámico que incluya movimientos como saltos, estiramientos dinámicos, movilidad articular y ejercicios de activación muscular para preparar el cuerpo para el trabajo.
+1. Descansa según sea necesario entre cada ronda para mantener una buena técnica y evitar la fatiga excesiva. El objetivo es completar cada ronda lo más rápido posible mientras mantienes una técnica adecuada en cada ejercicio.
+  - 5 rondas por tiempo:
+    - 10 air squats (sentadillas sin peso)
+    - 8 push-ups (flexiones de brazos)
+    - 6 burpees (flexiones y saltos explosivos)
+1. **Enfriamiento (5 minutos):** Concluye el WOD con 5 minutos de enfriamiento que incluyan estiramientos estáticos para trabajar los músculos principales que se utilizaron durante el entrenamiento. Esto ayudará a reducir la tensión muscular y mejorar la recuperación.
 
-FROM_EMAIL_ADDRESS=test@email.com
-TO_EMAIL_ADDRESS=test@email.com
+## **Consejos para Principiantes:**
 
-MAILGUN_API_KEY=XXXXXXXXX
-MAILGUN_DOMAIN=XXXXXXXXX
-MAILGUN_API_URL=https://api.eu.mailgun.net
+- Escucha a tu cuerpo y modifica los ejercicios según sea necesario para adaptarlos a tu nivel de condición física.
+- Concéntrate en mantener una técnica adecuada en todo momento para evitar lesiones.
+- No te preocupes por la velocidad; en su lugar, concéntrate en mantener un ritmo constante y controlado.
+- No dudes en pedir ayuda o consejo a tu entrenador o compañeros de clase si tienes alguna pregunta sobre la técnica o la forma adecuada de realizar un ejercicio.
 
-POSTMARK_SERVER_TOKEN=XXXXXXXXX
+## **Conclusiones:**
 
-SLACK_CHANNEL_ID=XXXXXXXXX
-SLACK_TOKEN=XXXXXXXXX
-```
-
-### 2. Configure your Static CMS Backend
-
-Navigate to `src/pages/admin.astro` and provide your Git repository details. You can find a list of all supported Git backends at:
-[https://www.staticcms.org/docs/backends-overview](https://www.staticcms.org/docs/backends-overview)
-
-**_Gitlab Example:_**
-
-```javascript
-
-const config = {
-	locale: lang,
-	site_url: url,
-	logo_url: 'https://nebulix.unfolding.io/nebulix-logo.svg',
-	local_backend: true,
-	backend: {
-		name: 'gitlab',
-		repo: '/<your-gitlab-repo>',
-		auth_type: 'pkce', // Required for pkce
-		app_id: 'xxxx', // Application ID from your GitLab settings
-		commit_messages: {
-			create: 'Create {{collection}} "{{slug}}"',
-			update: 'Update {{collection}} "{{slug}}"',
-			delete: 'Delete {{collection}} "{{slug}}"',
-			uploadMedia: 'Upload "{{path}}"',
-			deleteMedia: 'Delete "{{path}}"'
-		}
-	},
-	search: 'true',
-    ....
-}
-
-```
-
-### 3. Add your site to the astro config
-
-```javascript
-
-export default defineConfig({
-	site: 'https://your-website.com',
-    ....
-
-```
-
-### 4. Install dependencies
-
-```bash
-npm install
-```
-
-### 🛠️ 5. Start Development server
-
-```bash
-npm run dev
-```
-
-If you wish to engage the local backend:
-
-```bash
-npm run cms-proxy-server
-```
-
-Now you can open Static CMS on http://localhost:4321/admin/
-
-## ❌ Removing Collections
-
-If your cosmic journey excludes a blog, portfolio, shop, or restaurant menu, simply remove the corresponding documents from the `**src/content**`. Additionally, erase the page templates from `**src/pages**` .
-
-## 🛸 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                    | Action                                           |
-| -------------------------- | ------------------------------------------------ |
-| `npm install`              | Installs dependencies                            |
-| `npm run dev`              | Starts local dev server at `localhost:4321`      |
-| `npm run cms-proxy-server` | Starts Staticcms proxy server for local-backend  |
-| `npm run build`            | Build your production site to `./dist/`          |
-| `npm run preview`          | Preview your build locally, before deploying     |
-| `npm run astro ...`        | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`  | Get help using the Astro CL                      |
-
-## 👀 Want to learn more about Astro?
-
-Check out [Astro documentation](https://docs.astro.build) or jump into Astro's [Discord server](https://astro.build/chat).
-
-## 📚 Tech Stack
-
-Astro, MDX, Vue, TailwindCSS, Pagefind, Snipcart
-
-## 🛟 Support
-
-If you encounter any issues or bugs, we encourage you to open an issue in the repository. To help us quickly address the problem, please provide detailed information about the bug and steps to reproduce it.
-
-## 👑 Premium Support
-
-For those seeking priority assistance, we offer premium support services. Do you need support, custom intergrations, design, or development? Feel free to reach out to me by email at [hello@unfolding.io.](mailto:hello@unfolding.io.) find me on [UpWork](https://www.upwork.com/freelancers/~01dcde6b3915c74c30) Im here to help!
-
-## ☕️ Buy me a coffee
-
-Want to power my late night coding sessions? [Buy me a coffee](https://nebulix.unfolding.io/shop/buy-me-a-coffee/)
-
-## 📝 License
-
-Want to get rid of the attribution? Simply [purchase a license](https://nebulix.unfolding.io/shop/nebulix-license/) and you're good to go.
-
-## 🚕 Roadmap
-
-As we journey towards v1.0, our path includes enriching the page builder with a diverse array of new blocks, upgrading dependencies to ensure optimal performance, and introducing exciting features. We're eager to hear from you! If you have any feature requests, please feel free to reach out and let us know.
+Este WOD de ejemplo proporciona a los principiantes una introducción sólida al mundo del CrossFit, combinando movimientos básicos con una dosis controlada de intensidad. Al completar este entrenamiento, los principiantes pueden comenzar a desarrollar una base sólida de fuerza, resistencia y coordinación que les preparará para futuros desafíos en el mundo del CrossFit. Recuerda siempre escuchar a tu cuerpo y avanzar a tu propio ritmo mientras trabajas para alcanzar tus metas de fitness.
