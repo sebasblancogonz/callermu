@@ -23,7 +23,7 @@ const m2dxOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://callermu.es",
+  site: "https://main--unrivaled-hummingbird-b70233.netlify.app",
   integrations: [
     icon(),
     mdx({}),
